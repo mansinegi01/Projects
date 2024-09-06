@@ -30,7 +30,7 @@ function App() {
   }
   return (
     <div className='w-full'>
-      <h1 className="  w-full flex justify-center h-[100px] text-green-600">Currency Converter</h1>
+      <h1 className="  w-full flex justify-center h-[100px] text-gray-500">Currency Converter</h1>
       <form action="" onSubmit={(e)=>{
         e.preventDefault()
         converted()
