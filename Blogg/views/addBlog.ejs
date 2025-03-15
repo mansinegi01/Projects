@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../components/linkcss.ejs') %>
+        <title>Document</title>
+</head>
+
+<body>
+    <%- include('../components/nav.ejs') %>
+
+        <div class="" style="display: flex; justify-content: center;">
+            <form action="/blogg/" method="post" enctype="multipart/form-data">
+                <div class="form-floating mb-3">
+                    <div class="">
+
+                        <label for="coverImage">Cover Image</label>
+                    </div>
+                    <input type="file" class="form-control" name="coverImage">
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="title">
+                    <label for="title">title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" name="body" style="height: 500px; width: 1000px;">Write your stuff here...</textarea>
+                    <label for="body">Comments</label>
+                </div>
+                <div class="" style="display: flex; justify-content: center;">
+
+
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+        <%- include('../components/linkscript.ejs') %>
+</body>
+
+</html>
