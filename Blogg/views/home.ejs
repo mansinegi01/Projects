@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<<<<<<< HEAD
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if (locals.msg) { %>
+        <%= msg %>
+            <% } %>
+                <form action="/url/" method="post">
+                    <label for="">Enter any URL : </label>
+                    <input type="text" name="url" placeholder="https://www.example.com">
+                    <button type="submit">Submit</button>
+                </form>
+
+                <% if (locals.urls) { %>
+                    <table>
+                        <thead>
+                            <th>S.No.</th>
+                            <th>Short ID</th>
+                            <th>Redirect URL</th>
+                            <th>Total Clicks</th>
+                        </thead>
+                        <tbody>
+                            <% urls.forEach((url,index)=> { %>
+                                
+                                <tr>
+                                    <td>
+                                        <%= index + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= url.shortID %>
+                                    </td>
+                                    <td>
+                                        <%= url.redirectURL %>
+                                    </td>
+                                    <td>
+                                        <%= url.visitedHistory.length %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } %>
+</body>
+
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../components/linkcss.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../components/nav.ejs') %>
+    <div class="mt-3" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 4; justify-content: space-around;">
+        <% blogs.forEach(blog => { %>
+            <div class="card" style="width: 18rem; height: 500px; overflow: hidden; position: relative;">
+                <img src="<%= blog.coverImage %>" style="width: 286px; height: 250px;" class="card-img-top" alt="Image not found">
+                <div class="card-body">
+                  <h5 class="card-title"><%= blog.title %></h5>
+                  <p class="card-text"><%= blog.body %></p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="height: 40px; position: relative; right: 290px; top: 455px;"><a style="color :whitesmoke ;text-decoration: none;  display: flex; justify-content: space-around;"  href="/blogg/<%= blog._id %>">View</a></button>
+            <% }) %>
+
+    </div>
+    <%- include('../components/linkscript.ejs') %> 
+</body>
+>>>>>>> 82a68a2 (added blogg)
+</html>
