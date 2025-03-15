@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if (locals.msg) { %>
+        <%= msg %>
+            <% } %>
+                <form action="/url/" method="post">
+                    <label for="">Enter any URL : </label>
+                    <input type="text" name="url" placeholder="https://www.example.com">
+                    <button type="submit">Submit</button>
+                </form>
+
+                <% if (locals.urls) { %>
+                    <table>
+                        <thead>
+                            <th>S.No.</th>
+                            <th>Short ID</th>
+                            <th>Redirect URL</th>
+                            <th>Total Clicks</th>
+                        </thead>
+                        <tbody>
+                            <% urls.forEach((url,index)=> { %>
+                                
+                                <tr>
+                                    <td>
+                                        <%= index + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= url.shortID %>
+                                    </td>
+                                    <td>
+                                        <%= url.redirectURL %>
+                                    </td>
+                                    <td>
+                                        <%= url.visitedHistory.length %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } %>
+</body>
+
+</html>
