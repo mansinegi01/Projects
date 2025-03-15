@@ -9,5 +9,6 @@ function getUID(id){
 }
 
 module.exports = {
-    setUID, getUID
+    setUID,
+    getUID
 }

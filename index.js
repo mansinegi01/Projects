@@ -22,6 +22,7 @@ app.use(express.urlencoded({extended : false}))
 app.use(express.json())
 app.use(cookieParser())
 
+
 // routes
 app.use('/url',restrict_logged_users,route)
 app.use('/user',userRoutes)

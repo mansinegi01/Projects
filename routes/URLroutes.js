@@ -3,6 +3,7 @@ const router = express();
 const {getAllurls, addUser, getUserAnalyticsByID, getUserWithID} = require('../controllers/URLroutes')
 
 router.get("/",getAllurls)
+
 router.get("/:id",getUserWithID)
 
 router.post("/",addUser)

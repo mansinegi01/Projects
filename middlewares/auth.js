@@ -12,9 +12,8 @@ function restrict_logged_users(req,res,next) {
 }
 
 function checkAuth(req,res,next) {
+    
     const userID = req.cookies?.uid;
-   
-
     const user = getUID(userID)
    
 

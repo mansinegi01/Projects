@@ -14,6 +14,7 @@ async function  handleSignUP(req,res) {
         msg : "new entry created"
     })
 }
+
 async function handleLogin(req,res) {
     const {email, password} = req.body;
     const user = await USER.findOne({email,password})
